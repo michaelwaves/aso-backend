@@ -2,7 +2,7 @@ const { exec } = require('child_process');
 const fs = require('fs')
 const express = require('express')
 const app = express()
-const port = 3000
+const port = 80
 
 // Disable CORS: Allow all origins
 app.use((req, res, next) => {
@@ -111,5 +111,5 @@ app.get('/fetch_output/oligo', (req, res) => {
 })
 
 app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
+    console.log(`RM Fold listening on port ${port}`)
 });
