@@ -83,7 +83,7 @@ sub checkenv {
 
   # check Sfold binaries
   print $ENV{'SFOLDEXE'}. "\n";
-  print ( ! -e $ENV{'SFOLDEXE'}) . "\n";
+  print ( ! -e $ENV{'SFOLDEXE'}). "\n";
   die " Error: Sfold does not run on your platform"
     if (!defined($ENV{'SFOLDEXE'}) || !-e $ENV{'SFOLDEXE'});
   die " Error: invalid environment variable 'FINDFEEXE'"
