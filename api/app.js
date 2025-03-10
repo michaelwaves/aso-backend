@@ -4,7 +4,7 @@ const express = require('express')
 var https = require('https')
 var http = require('http')
 
-//import keys
+//import keys, assuming you installed them with certbot
 var privateKey = fs.readFileSync('/etc/letsencrypt/live/quokkafinancial.com/privkey.pem');
 var certificate = fs.readFileSync('/etc/letsencrypt/live/quokkafinancial.com/fullchain.pem');
 
