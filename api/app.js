@@ -2,7 +2,7 @@ const { exec } = require('child_process');
 const fs = require('fs')
 const express = require('express')
 const app = express()
-const port = 80
+const port = 443
 
 // Disable CORS: Allow all origins
 app.use((req, res, next) => {
