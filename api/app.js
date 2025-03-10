@@ -1,8 +1,24 @@
 const { exec } = require('child_process');
 const fs = require('fs')
 const express = require('express')
+var https = require('https')
+var http = require('http')
+
+//import keys
+var privateKey = fs.readFileSync('/etc/letsencrypt/live/quokkafinancial.com/privkey.pem');
+var certificate = fs.readFileSync('/etc/letsencrypt/live/quokkafinancial.com/fullchain.pem');
+
 const app = express()
-const port = 443
+//const port = 3000
+
+http.createServer(app).listen(80)
+https.createServer({
+    key: privateKey,
+    cert: certificate
+}, app).listen(443)
+console.log('RM FOLD HTTPS server starting on port 443 ')
+console.log('RM FOLD HTTP server starting on port 80')
+
 
 // Disable CORS: Allow all origins
 app.use((req, res, next) => {
@@ -110,6 +126,6 @@ app.get('/fetch_output/oligo', (req, res) => {
     });
 })
 
-app.listen(port, () => {
+/* app.listen(port, () => {
     console.log(`RM Fold listening on port ${port}`)
-});
+}); */
