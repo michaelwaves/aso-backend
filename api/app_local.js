@@ -1,24 +1,10 @@
 const { exec } = require('child_process');
 const fs = require('fs')
 const express = require('express')
-var https = require('https')
-var http = require('http')
 
-//import keys, assuming you installed them with certbot
-var privateKey = fs.readFileSync('/etc/letsencrypt/live/quokkafinancial.com/privkey.pem');
-var certificate = fs.readFileSync('/etc/letsencrypt/live/quokkafinancial.com/fullchain.pem');
 
 const app = express()
-//const port = 3000
-
-http.createServer(app).listen(80)
-https.createServer({
-    key: privateKey,
-    cert: certificate
-}, app).listen(443)
-console.log('RM FOLD HTTPS server starting on port 443 ')
-console.log('RM FOLD HTTP server starting on port 80')
-
+const port = 3000
 
 // Disable CORS: Allow all origins
 app.use((req, res, next) => {
@@ -104,7 +90,7 @@ app.get('/run:query?', (req, res) => {
 
 app.get('/fetch_output/oligo', (req, res) => {
     const data = req
-    fs.readFile('/home/michaelyu713705/aso-backend/api/output/oligo.out', 'utf8', (err, data) => {
+    fs.readFile('./output/oligo.out', 'utf8', (err, data) => {
         const re = /\d+-.+/g;
         const rows = data.match(re);
 
@@ -126,6 +112,6 @@ app.get('/fetch_output/oligo', (req, res) => {
     });
 })
 
-/* app.listen(port, () => {
+app.listen(port, () => {
     console.log(`RM Fold listening on port ${port}`)
-}); */
+}); 

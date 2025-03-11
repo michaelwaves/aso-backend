@@ -23,7 +23,7 @@ Sfold Executable Code for Academic Users, Version 2.2-20220519
           99 U
          100 A
  
- Random seed =       707038
+ Random seed =        68550
  Sequence length n =          100
  Number of structures in a sample =         1000
  Reverse complement = F
@@ -35,8 +35,8 @@ Sfold Executable Code for Academic Users, Version 2.2-20220519
  scaled U(1,n) =    3.6376959797466253E-002
  -RT ln(U(1,n))=  -40.223354239364745     
  
- Time for PFs =    6.90039992E-02
- Time for sampling =   0.609027326    
- Time for PFs & sampling =   0.678031325    
- Time for output & others =   0.184742600    
- Total cpu time =   0.862773895    
+ Time for PFs =    5.00859991E-02
+ Time for sampling =   0.540693045    
+ Time for PFs & sampling =   0.590779066    
+ Time for output & others =   0.132503688    
+ Total cpu time =   0.723282754    
