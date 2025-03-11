@@ -68,7 +68,7 @@ app.get('/run:query?', (req, res) => {
     writeSequenceToFile(sequence, name)
 
     //option -i 2 runs soligo
-    exec('../bin/sfold -i 2  ./sequence.txt', (error, stdout, stderr) => {
+    exec('/home/michaelyu713705/aso-backend/bin/sfold -i 2  ./sequence.txt', (error, stdout, stderr) => {
         if (error) {
             console.error(`exec error: ${error}`);
             return;
